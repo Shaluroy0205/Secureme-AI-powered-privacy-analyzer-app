@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureMe - Privacy Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 SecureMe: Privacy Analyzer</h1>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+        <form id="privacyForm" ...>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label>Apps You Use (select all that apply):</label>
+            <div class="apps-categories">
+                <div class="category">
+                    <span class="category-title">Social</span>
+                    <label><input type="checkbox" name="apps" value="Facebook" data-info="Collects extensive personal data for ads."> Facebook <span class="info" tabindex="0" aria-label="Info about Facebook">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="Instagram" data-info="Owned by Meta, shares data with Facebook."> Instagram <span class="info" tabindex="0" aria-label="Info about Instagram">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="Twitter" data-info="Collects behavioral data for ads."> Twitter <span class="info" tabindex="0" aria-label="Info about Twitter">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="Snapchat" data-info="Tracks location and usage patterns."> Snapchat <span class="info" tabindex="0" aria-label="Info about Snapchat">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="TikTok" data-info="Known for aggressive data collection."> TikTok <span class="info" tabindex="0" aria-label="Info about TikTok">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="LinkedIn" data-info="Collects professional and personal data."> LinkedIn <span class="info" tabindex="0" aria-label="Info about LinkedIn">ℹ️</span></label>
+                </div>
+                <div class="category">
+                    <span class="category-title">Productivity</span>
+                    <label><input type="checkbox" name="apps" value="Google Drive" data-info="Google scans files for content and ads."> Google Drive <span class="info" tabindex="0" aria-label="Info about Google Drive">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="Microsoft Teams" data-info="Collects meeting and usage data."> Microsoft Teams <span class="info" tabindex="0" aria-label="Info about Microsoft Teams">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="Zoom" data-info="May record meetings and collect metadata."> Zoom <span class="info" tabindex="0" aria-label="Info about Zoom">ℹ️</span></label>
+                </div>
+                <div class="category">
+                    <span class="category-title">Shopping</span>
+                    <label><input type="checkbox" name="apps" value="Amazon" data-info="Tracks purchases and browsing habits."> Amazon <span class="info" tabindex="0" aria-label="Info about Amazon">ℹ️</span></label>
+                    <label><input type="checkbox" name="apps" value="Flipkart" data-info="Collects shopping and payment data."> Flipkart <span class="info" tabindex="0" aria-label="Info about Flipkart">ℹ️</span></label>
+                </div>
+                <div class="category">
+                    <span class="category-title">Other</span>
+                    <label><input type="checkbox" name="apps" value="Other"> Other</label>
+                    <input type="text" id="customApp" name="customApp" placeholder="Type another app..." aria-label="Custom app">
+                </div>
+            </div>
+
+            <label><input type="checkbox" id="location" name="location"> Allow Location Access</label>
+            <label><input type="checkbox" id="cookies" name="cookies"> Allow Cookies</label>
+            <label><input type="checkbox" id="thirdparty" name="thirdparty"> Allow Third-Party Data Sharing</label>
+
+            <div class="progress-container" aria-label="Privacy risk meter">
+                <span>Risk Meter:</span>
+                <div class="progress-bar-bg">
+                    <div id="riskBar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Analyze My Privacy</button>
+                <button type="button" id="resetBtn">Reset</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+        <div class="export-share">
+            <button id="exportBtn">Export as Text</button>
+            <button id="shareBtn">Share Result</button>
+        </div>
+        <div class="news-feed" aria-live="polite">
+            <h2>Privacy News</h2>
+            <ul id="newsList"><li>Loading latest privacy news...</li></ul>
+        </div>
+        <div class="language-selector">
+            <label for="language">Language:</label>
+            <select id="language" name="language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="es">Spanish</option>
+                <!-- Add more languages as needed -->
+            </select>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
